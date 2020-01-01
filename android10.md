@@ -116,3 +116,24 @@ adb shell gsi_tool disable    adb shell gsi_tool enable -s    adb shell gsi_tool
 
 #  系统安全性
 
+运行时设置权限
+
+配置网络安全设置
+
+更新为直接启动感知型
+
+# Android App Bundle
+
+Android App Bundle是Android新推出的一种官方发布格式，可以更高效的方式开发和发布应用，以更小的应用提供更优质的服务，从而提升安装成功率并减少卸载量。
+
+在 Android Studio 3.2 或更高版本、Unity 2018.3 与 2017.4.17，以及 Cocos Creator 2.0.9 或更高版本中受支持。
+
+
+
+* 更高效管理版本
+* 更小的应用|Google play 的Dynamic Delivery
+* 自定义功能传送
+* 提升工程速度
+* 缩短编译时间
+* 提供Google play instant 免安装体验
+
