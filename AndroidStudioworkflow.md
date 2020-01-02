@@ -1,3 +1,7 @@
+[TOC]
+
+
+
 # 一、Android Studio
 
 ## 1.概览
@@ -63,41 +67,109 @@ Alt+Enter执行快速修复并显示建议的操作。
 
 #### 导航
 
+![image-20200102202428195](AndroidStudioworkflow.assets/image-20200102202428195.png)![image-20200102214236235](AndroidStudioworkflow.assets/image-20200102214236235.png)
 
+* 最近文件：可以在最近访问文件之间切换。```ctrl+e```
+* 文件结构：可以查看当前文件的结构。```ctrl+f12```
+* 转到类：可搜索并转到 ，支持复杂表达式，包括驼峰、路径、直线导航和中间名匹配。```ctrl+n```
+* 转到文件：可转到文件或文件夹，转到文件夹在表达式末尾添加/。```ctrl+shift+n```
+* 转到符号： 可按名称转到方法或字段。```ctrl+shift+alt+n```
 
 #### 样式和格式
 
+编辑时，android studio会自动应用代码设置中指定的格式和样式。可以自定义代码样式设置，包括指定制表符、缩进、空格、换行、花括号、空白行。**File>Settings>Editor>Code Style**
+
 #### 版本控制基本知识
+
+android studio 支持多个版本控制系统VCS，包括Git、CVS、Mercurial、Subversion、Google cloud source repositories。
+
+![image-20200102222038544](AndroidStudioworkflow.assets/image-20200102222038544.png)![image-20200102222052656](AndroidStudioworkflow.assets/image-20200102222052656.png)
+
+**vcs>enable version>control integration**选择要与项目根目录相关联的版本控制选项。
+
+**file>setting>version control**菜单选项设置和修改版本控制设置。
 
 ### Gradle编译系统
 
+android studio将Gradle用作编译系统的基础，并通过android plugin for gradle提供更多面向android的功能。该编译系统可以作为集成工具从android studio菜单运行，也可以从命令行独立运行，编译系统功能：
+
+* 自定义、配置和扩展编译流程。
+
+* 使用相同的项目和模块为应用创建多个具有不同功能的APK
+
+* 不同源集之间重复使用代码和资源
+
+利用gradle灵活性，可以在不修改应用核心源文件的情况下完成以上操作。android studio 编译文件以build.gradle命名，使用android plugin for gradle提供的元素以groovy语法配置编译的纯文本文件，每个项目都有一个整个项目的顶级编译文件，以及用于各模块的单独模块级编译文件。在导入现有项目时，android studio会自动生成必要的编译文件。
+
 #### 编译变体
+
+编译系统可从一个项目创建多个同一应用不同版本，如付费版和免费版应用，或者在Google play 上为不同设备配置分发多个APK。
 
 #### 多APK支持
 
+ 可以根据屏幕密度或 ABI 高效创建多个APK。例如可以针对 hdpi 和 mdpi 屏幕密度创建单独的应用APK，同时仍将他们视为一个变体，并允许它们共享测试APK，javac，dx和proguard设置。
+
 #### 资源压缩
 
+android studio 中的资源压缩功能可自动从封装应用和库依赖项中移除不使用的资源。资源压缩与代码压缩工具（如proguard）协同工作。
+
 #### 管理依赖项
+
+项目的依赖项在build.gradle文件中按名称指定。gradle可以自动查找依赖项，并在编译中提供这些依赖项。可以做build.gradle文件中声明模块依赖项、远程二进制依赖项以及本地二进制依赖项。android studio配置项目时默认使用Maven中央代码库配置包含在项目的顶级编译文件中。
 
 ### 调试和分析工具
 
 #### 内联调试
 
+使用内联调试功能在调试程序视图中对引用、表达式和变量值进行内联验证，提高代码走查效率，内联信息包括：
+
+* 内联变量值
+* 引用某选定对象的引用对象
+* 方法返回值
+* lambda和运算符表达式
+* 工具提示值
+
+![img](AndroidStudioworkflow.assets/inline-variable-value-debug_2-1_2x.png)
+
+启用内联调试**debug>setting>show value inline**
+
+
+
 #### 性能分析器
+
+android profiler跟踪应用内存和CPU使用情况，查找已解除内存分配的对象，查找内存泄露以及优化图形性能和分析网络请求。
 
 #### 堆转储
 
+android studio分析内存使用情况时可以同时启动垃圾回收，将java堆转储为android专有HPROF二进制格式文件中的堆快照，HPROF查看器会显示类、每个类的实例以及引用树，帮助跟踪内存使用情况及找出内存泄露
+
 #### 内存分析器
+
+使用内存分析器跟踪内存分配情况，
 
 #### 数据文件访问
 
+systrace和logcat等android SDK工具可以生成性能和调试数据，查看调试数据文件打开captures窗口，可将.hprof文件转换为标准调查RAM使用情况文件格式。
+
 #### 代码检查
+
+编译时android studio自动运行lint 及其他IDE检查，检查项目源文件是否存在潜在错误，以及正确性、安全性、性能、易用性、无障碍性和国际化方面是否需要优化改进。
+
+![img](AndroidStudioworkflow.assets/lint-inspection-results_2-1_2x.png)
+
+除了lint检查，还可以执行intellij代码检查和注解验证，以简化编码工作流程。
 
 #### android studio中的注解
 
+android studio 支持为变量、参数和返回值添加注解，方便捕捉错误。
+
 #### 日志消息
 
+应用编译和运行时，logcat窗口查看adb输出和设备日志消息
+
 #### 性能分析
+
+分析应用的CPU、内存和网络性能，打开android profiler分析器 **view>tool windows>android profiler**
 
 ## 2.安装android studio
 
