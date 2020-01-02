@@ -4,7 +4,7 @@ Android是一种基于Linux的开放源代码软件栈。
 
 主要组件
 
-![Android 软件堆栈](https://developer.android.google.cn/guide/platform/images/android-stack_2x.png)
+![Android 软件堆栈](android10.assets/android-stack_2x.png)
 
 ##  Linux内核
 
