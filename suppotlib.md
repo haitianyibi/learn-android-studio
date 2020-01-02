@@ -158,7 +158,62 @@ com.android.support:percent:28.0.0
 
 ### 添加支持库
 
+1. 在项目的build.gradle文件中添加Google符Maven代码库
+
+   ```groovy
+       allprojects {
+           repositories {
+               google()
+   
+               // If you're using a version of Gradle lower than 4.1, you must
+               // instead use:
+               //
+               // maven {
+               //     url 'https://maven.google.com'
+               // }
+           }
+       }
+   ```
+
+2. 对于要在其中使用支持库的每个模块，在模块的build.gradle文件的dependencies块中添加相应库，例如要添加v4 core-utils库，
+
+   ```groovy
+       dependencies {
+           ...
+           implementation "com.android.support:support-core-utils:28.0.0"
+       }
+   ```
+
 ### 使用支持库API
+
+为现有框架API提供支持的支持库类通常与框架具有相同的名称，但他们位于android.support 类软件包中，或带有*Compat后缀。
+
+### 清单声明变更
+
+```xml
+      <uses-sdk
+          android:minSdkVersion="14"
+          android:targetSdkVersion="23" />
+    
+```
+
+此清单设置会告知Google play应用可以安装在搭载API级别14及更高版本的设备上
+
+若使用gradle编译文件
+
+```groovy
+    apply plugin: 'com.android.application'
+
+    android {
+        ...
+
+        defaultConfig {
+            minSdkVersion 16
+            ...
+        }
+        ...
+    }
+```
 
 # 界面
 
