@@ -22,9 +22,17 @@ Android Studio的每个项目都包含一个或多个含源代码文件和资源
 
 磁盘上的Android项目结构与此表示形式的项目结构不同，要查看项目实际的文件结构，选择project视图。
 
-![img](https://developer.android.google.cn/studio/images/intro/project-android-view_2-1_2x.png)
+<img src="AndroidStudioworkflow.assets/project-android-view_2-1_2x.png" alt="img" style="zoom:80%;" />
 
-![image-20200102181048465](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200102181048465.png)
+![image-20200102181048465](AndroidStudioworkflow.assets/image-20200102181048465.png)
+
+也可以自定义项目文件的视图，重点显示应用开发的特定方面。例如，选择项目的problems视图会显示指向包含任何已识别编码和语法错误。
+
+### 界面
+
+![img](AndroidStudioworkflow.assets/main-window_2-2_2x.png)
+
+
 
 
 ## 2.安装android studio
