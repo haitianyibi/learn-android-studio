@@ -1,4 +1,4 @@
-# 支持库
+# 一、支持库
 
   Android 9(API 28)发布后，最新支持库AndroidX也随之诞生，它属于 Jetpack 。除了现有的支持库，AndroidX库还包括最新的 Jetpack组件。
 
@@ -27,7 +27,7 @@
     gradle -q dependencies your-app-project:dependencies
 ```
 
-# 支持库功能
+# 二、支持库功能
 
 ActivityCompat：包括运行时权限和动画过渡
 
@@ -47,7 +47,7 @@ Preference:
 
 ContenResolverCompat:
 
-# 支持库软件包
+# 三、支持库软件包
 
 ### v4 支持库
 
@@ -152,7 +152,7 @@ com.android.support:percent:28.0.0
   com.android.support:recommendation:28.0.0
 ```
 
-# 支持库设置
+# 四、支持库设置
 
 ### 选择支持库
 
@@ -215,7 +215,7 @@ com.android.support:percent:28.0.0
     }
 ```
 
-# 界面
+# 五、界面
 
 通用布局容器：RecyclerView、ViewPager、GridLayout、PercentFrameLayout、PercentRelativeLayout
 
@@ -223,7 +223,7 @@ com.android.support:percent:28.0.0
 
 视图、对话框、微件：CardView、AppCompatDialogFragment、NotificationCompat、SearchView
 
-# Material Design
+# 六、Material Design
 
 CoordinatorLayout、AppBarLayout、FloatingActionButton、DrawerLayout、TabLayout、Snackbar
 
@@ -233,21 +233,17 @@ CoordinatorLayout、AppBarLayout、FloatingActionButton、DrawerLayout、TabLayo
  com.android.support:wear:28.0.0
 ```
 
-# 图形
+# 七、图形
 
 矢量图、矢量动画支持
 
-# 无障碍性
+# 八、无障碍性
 
 ExploreByTouchHelper
 
-# 媒体播放
+# 九、媒体播放
 
 MediaRouter、MediaControllerCompat
 
-# TV应用
-
-# Wear应用
-
-# 实用工具
+# 十、实用工具
 

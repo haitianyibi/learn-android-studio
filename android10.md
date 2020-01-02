@@ -1,4 +1,4 @@
-# 平台架构
+# 一、平台架构
 
 Android是一种基于Linux的开放源代码软件栈。
 
@@ -45,7 +45,7 @@ ART的部分主要功能包括：
 
 Android随附一套用于电子邮件、短信、日历、互联网浏览和联系人等的核心应用。用户可以选择替换默认应用，有些应用如设置则不能替换。
 
-# 通用系统映像（GSI）
+# 二、通用系统映像（GSI）
 
  通用系统映像（GSI）是一个“纯Android”实现，采用未经修改的Android开源项目（AOSP）代码，运行在各种设备上。
 
@@ -63,7 +63,7 @@ GSI适用于以下特征的设备：
 
 * cpu架构和GSI类型相同。
 
-# 动态系统更新（DSU）
+# 三、动态系统更新（DSU）
 
 动态系统更新（DSU）是Android Q中引入的系统功能，可以执行以下操作：
 
@@ -114,7 +114,7 @@ adb shell gsi_tool enable
 adb shell gsi_tool disable    adb shell gsi_tool enable -s    adb shell gsi_tool disable
 ```
 
-#  系统安全性
+#  四、系统安全性
 
 运行时设置权限
 
@@ -122,7 +122,7 @@ adb shell gsi_tool disable    adb shell gsi_tool enable -s    adb shell gsi_tool
 
 更新为直接启动感知型
 
-# Android App Bundle
+# 五、Android App Bundle
 
 Android App Bundle是Android新推出的一种官方发布格式，可以更高效的方式开发和发布应用，以更小的应用提供更优质的服务，从而提升安装成功率并减少卸载量。
 
