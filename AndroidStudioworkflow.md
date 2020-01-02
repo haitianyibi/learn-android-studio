@@ -2,6 +2,31 @@
 
 ## 1.概览
 
+### 项目结构
+
+Android Studio的每个项目都包含一个或多个含源代码文件和资源文件的模块，Android项目视图按模块组织结构。模块类型包括：
+
+* Android应用模块
+
+* 库模块
+
+* Google App Engine模块
+
+所有编译文件都在顶层Gradle Scripts下显示，且每个应用模块都包含以下文件夹：
+
+* manifests：包含AndroidManifest.xml文件
+
+* java：包含 java源代码文件，包括 JUnit测试代码
+
+* res：包含所有非代码资源，例如XML布局，界面字符串和位图图像
+
+磁盘上的Android项目结构与此表示形式的项目结构不同，要查看项目实际的文件结构，选择project视图。
+
+![img](https://developer.android.google.cn/studio/images/intro/project-android-view_2-1_2x.png)
+
+![image-20200102181048465](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200102181048465.png)
+
+
 ## 2.安装android studio
 
 ## 3.迁移至android studio
