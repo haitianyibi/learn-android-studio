@@ -299,11 +299,15 @@ android studio 支持为变量、参数和返回值添加注解，方便捕捉�
 * developer serverces：包含来自google 或其他第三方android studio附加组件的设置
 * modules：可以让你修改特定于模块的编译设置，包括目标和最低SDK、应用签名以及依赖项。
 
-#### 开发者服务
-
 #### 模块
 
+* properties：指定编译模块所用的SDK和编译工具的版本。
+* signing：指定用于签署APK的证书
+* dependencies：列出该模块的库、文件和模块依赖项
+
 ## 2.创建项目
+
+
 
 ## 3.添加kotlin代码
 
