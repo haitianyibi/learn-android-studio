@@ -307,13 +307,41 @@ android studio 支持为变量、参数和返回值添加注解，方便捕捉�
 
 ## 2.创建项目
 
+**file>new >new project**
 
+选择设备类型下的项目类别选项卡
+
+![image-20200103151918404](AndroidStudioworkflow.assets/image-20200103151918404.png)
+
+配置项目设置
+
+![image-20200103152424733](AndroidStudioworkflow.assets/image-20200103152424733.png)
+
+* name项目名称。My Application
+* package name软件包名。com.example.myapplication，默认情况下软件包名为应用ID，之后可更改。
+* save location项目本地保存位置
+* 新建项目示例代码使用的语言
+* 设置应用支持的最低API
+* this project will support instant apps表示项目类型通过Google play支持免安装
+* 默认使用androidx库，androidx库是android支持库的改进替换
+
+导入现有项目**file>new>import project**
+
+从版本控制导入项目**file>new>project from version control**
+
+![image-20200103154223934](AndroidStudioworkflow.assets/image-20200103154223934.png)
 
 ## 3.添加kotlin代码
+
+[kotlincn中文站](https://www.kotlincn.net/)
+
+
 
 ## 4.Dynamic Delivery简介
 
 ### 概览
+
+Google play的应用服务模型名为Dynamic Delivery，该模型使用android App bundle针对每位用户的设备配置生成并提供经过优化APK，因此用户只需下载其运行应用所需要的代码和资源。无需再编译、签署和管理多个APK，也可以获得更小、更优化的下载文件包。
 
 ### 配置基本模块
 
