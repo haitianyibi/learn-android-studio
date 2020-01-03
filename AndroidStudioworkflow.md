@@ -173,9 +173,19 @@ android studio 支持为变量、参数和返回值添加注解，方便捕捉�
 
 ## 2.安装android studio
 
+[下载](https://developer.android.google.cn/studio/)
+
+更新 **help>check for update**
+
 ## 3.迁移至android studio
 
+###  eclipse迁移至android studio
+
+### intellij 迁移至android studio
+
 ## 4.配置IDE
+
+
 
 ## 5.键盘快捷键
 
@@ -185,9 +195,113 @@ android studio 支持为变量、参数和返回值添加注解，方便捕捉�
 
 # 二、工作流基础知识
 
+![img](AndroidStudioworkflow.assets/developer-workflow_2x.png)
+
+1. 设置工作区
+2. 编写应用
+3. 编译并运行
+4. 调试、分析和测试
+5. 发布
+
 # 三、管理项目
 
 ## 1.概览
+
+### 模块
+
+模块是源文件和编译设置的集合，可以让项目划分为独立的功能单位，项目可以包含一个或多个模块，一个模块可以将另一个模块作为依赖项。每个模块都可以单独编译、测试和调试。
+
+添加新模块**file>new>new module**
+
+#### android 应用模块
+
+该模块为应用的源代码、资源文件和应用级设置（例如模块级编译文件和Android清单文件）提供容器。新建项目时默认模块名为“app”。
+
+![image-20200103112359666](AndroidStudioworkflow.assets/image-20200103112359666.png)
+
+在**create new module**窗口中，android studio提供了以下类型应用模块：
+
+* 手机和平板电脑模块
+* wear os 模块
+* android TV模块
+* glass 模块
+
+#### 动态功能模块
+
+该模块表示应用中可利用Google play dynamic delivery的模块化功能。如可提供免安装体验。
+
+#### 库模块
+
+为可重用代码提供容器，可以将其作为依赖项用在其他应用模块中或将其导入其他项目中，从结构上讲，库模块与应用模块相同，但是编译时库模块会创建代码归档文件而不是APK，无法安装在设备上。android  studio提供以下库模块：
+
+* android 库：可以包含android 项目中支持所有文件类型，包括源代码、资源和清单文件。编译结果是一个android ARchive文件AAR，可以添加为android应用模块的依赖项。
+* java 库：只能包含 java源文件，编译结果是 java归档文件 JAR，可以添加为android应用模块或其他 java项目的依赖项。
+
+#### Google cloud模块
+
+该模块为Google cloud后端代码提供容器
+
+### 项目文件
+
+默认情况下，android studio 会在android视图中显示项目文件。此视图不能反映磁盘上的实际文件层次结构，而是按模块和文件类型进行整理，以简化项目的关键源文件之间的导航方式，并隐藏不常用的文件或目录。
+
+![img](AndroidStudioworkflow.assets/projectview-p1-1578022835718.png)
+
+* 在顶级gradle script组中显示相应项目的所有与编译相关的配置文件。
+* 在模块级组中显示每个模块的所有清单文件
+* 在一个组中显示所有备用资源文件
+* minifests:包含androidmanifest文件
+* java:包含java源文件，以软件包名分割各文件
+* res:包含所有非代码资源，如XML布局，界面字符串和位图图像
+
+#### Android项目视图
+
+在project窗口选择project视图可以查看实际文件结构
+
+![img](AndroidStudioworkflow.assets/projectview-p2.png)
+
+项目名/模块名/build/包含编译输出
+
+​						libs/包含专用库
+
+​						src/包含相应模块在以下子目录中的所有代码和资源文件
+
+​								androidtest/包含android设备上运行的插桩测试代码
+
+​								main/包含主源集文件：所有的编译共享体的android代码和资源
+
+​										androidmanifest.xml描述应用及各个组件的性质
+
+​										java/包含java代码
+
+​										jni/包含使用java本地接口 JNI 的本机代码
+
+​										gen/包含android studio生成的java文件
+
+​										res/包含应用资源，如可绘制对象文件，布局文件和界面字符串
+
+​										assets/包含.apk文件
+
+​								test/包含主机JVM上运行的本地测试代码
+
+​					build.gradle(模块)定义了特定于模块的编译配置
+
+​			build.gradle（项目）定义了所有模块的编译配置
+
+### 项目结构设置
+
+ ![image-20200103143116444](AndroidStudioworkflow.assets/image-20200103143116444.png)
+
+**file>project structure**
+
+* SDK location：设置项目使用的 JDK 、android SDK和android NDK的位置
+* project:设置gradle 和android  plugin for gradle的版本以及目录代码库位置名称
+* developer serverces：包含来自google 或其他第三方android studio附加组件的设置
+* modules：可以让你修改特定于模块的编译设置，包括目标和最低SDK、应用签名以及依赖项。
+
+#### 开发者服务
+
+#### 模块
 
 ## 2.创建项目
 
