@@ -144,7 +144,7 @@ Alt+Enter（或在 Mac 上按 Option+Enter）进行快速修复。如果出现�
 
 - `Intent` 构造函数会获取两个参数：`Context` 和 `Class`。
 
-  首先使用 `Context` 参数，因为 `Activity` 类是 的子类。
+  首先使用 `Context` 参数，因为 `Activity` 类是`Context`  的子类。
 
   在本例中，系统将 `Intent,` 传递到的应用组件的 `Class` 参数为要启动的 Activity。
 
