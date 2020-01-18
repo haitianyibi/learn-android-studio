@@ -43,13 +43,11 @@ Android 允许您为不同的设备提供不同的资源。例如，您可以针
 
 - **app > manifests > AndroidManifest.xml**
 
-  [清单文件](https://developer.android.google.cn/guide/topics/manifest/manifest-intro)[描述了应用的基本特性并定义了每个应用组件。](https://developer.android.google.cn/guide/topics/manifest/manifest-intro)
+  AndroidManifest.xml清单文件描述了应用的基本特性并定义了每个应用组件。
 
-  [有两个使用此名称的文件：一个针对项目“Project: My First App”，另一个针对应用模块“Module: app”。每个模块均有自己的 `build.gradle` 文件，但此项目当前仅有一个模块。您可以使用每个模块的 `build.file` 控制 ](https://developer.android.google.cn/guide/topics/manifest/manifest-intro)[Gradle 插件](https://developer.android.google.cn/studio/releases/gradle-plugin)编译应用的方式。要详细了解此文件，请参阅[配置编译版本](https://developer.android.google.cn/studio/build/index#module-level)。
+  [有两个使用此名称的文件：一个针对项目“Project: My First App”，另一个针对应用模块“Module: app”。每个模块均有自己的 `build.gradle` 文件，但此项目当前仅有一个模块。您可以使用每个模块的 `build.file` 控制 Gradle 插件编译应用的方式。
 
-模拟器运行
-
-Android 应用的界面 (UI) 以布局和微件的层次结构形式构建而成。布局是 [`ViewGroup`](https://developer.android.google.cn/reference/android/view/ViewGroup.html) 对象，即控制其子视图在屏幕上的放置方式的容器。微件是 [`View`](https://developer.android.google.cn/reference/android/view/View.html) 对象，即按钮和文本框等界面组件。
+Android 应用的界面 (UI) 以布局和微件的层次结构形式构建而成。布局是 ViewGroup对象，即控制其子视图在屏幕上的放置方式的容器。微件是 View对象，即按钮和文本框等界面组件。
 
 ![image-20200114183406594](android%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97.assets/image-20200114183406594.png)
 
@@ -81,7 +79,7 @@ app > res > values > strings.xml
 
 这是一个[字符串资源](https://developer.android.google.cn/guide/topics/resources/string-resource.html)文件，您可在此文件中指定所有界面字符串。该文件可让您在一个位置管理所有界面字符串，使字符串的查找、更新和本地化变得更加容易。
 
-点击窗口顶部的 **Open editor**。此时将打开 [Translations Editor](https://developer.android.google.cn/studio/write/translations-editor.html)，它提供了一个可以添加和修改默认字符串的简单界面。它还有助于让所有已翻译的字符串井然有序。
+点击窗口顶部的 **Open editor**。此时将打开 Translations Editor，它提供了一个可以添加和修改默认字符串的简单界面。它还有助于让所有已翻译的字符串井然有序。
 
  **Attributes** 窗口
 
