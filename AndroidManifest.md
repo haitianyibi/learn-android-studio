@@ -235,11 +235,17 @@ android:allowTaskReparenting/android:allowBackup/android:allowClearUserData/andr
 </activity>
 ```
 
+声明实现应用部分可视化界面的 Activity，系统不会识别和运行任何未进行声明的 Activity
+
 包含在application元素中，可包含layout/meta-data/intent-filter元素
 
 **属性：**
 
+android:allowEmbedded/android:allowTaskReparenting/android:alwaysRetainTaskState/
 
+  ### android:name
+
+实现 Activity 的类的名称    
 
 # activity-alias
 
@@ -256,6 +262,22 @@ android:allowTaskReparenting/android:allowBackup/android:allowClearUserData/andr
 # instrumentation
 
 # intent-filter
+
+**语法：**
+
+```xml
+<intent-filter android:icon="drawable resource"
+                   android:label="string resource"
+                   android:priority="integer" >
+        . . .
+    </intent-filter>
+```
+
+包含在activity/activity-alias/service/receiver
+
+**属性：**
+
+
 
 # meta-data
 
