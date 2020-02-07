@@ -123,6 +123,54 @@ android:allowTaskReparenting/android:allowBackup/android:allowClearUserData/andr
 
 是否允许应用参与备份和恢复基础架构。如果将此属性设为 false，则永远不会为该应用执行备份或恢复，即使是采用全系统备份方法也不例外（这种备份方法通常会通过 adb 保存所有应用数据）。此属性的默认值为 true。
 
+### android:allowClearUserData
+
+ 是否允许应用重置用户数据。这些数据包括标志（如用户是否看到了介绍性提示）以及用户可自定义的设置和偏好设置。此属性的默认值为 `true`。只有属于系统映像的应用才能明确声明此属性。第三方应用不能在其清单文件中包含此属性。
+
+### android:backupAgent
+
+实现应用的备份代理的类的名称，它是 `BackupAgent` 的子类。属性值应该是一个完全限定类名（如 `"com.example.project.MyBackupAgent"`）。不过，作为一种简写形式，如果名称的第一个字符是句点（例如 `".MyBackupAgent"`），则会将其附加到 `` 元素中指定的软件包名称。
+
+没有默认值。必须指定相应名称。
+
+### android:backupInForeground
+
+表示即使此应用处于前台等效状态，也可以对其执行[自动备份](https://developer.android.google.cn/guide/topics/data/autobackup.html)操作。系统会在自动备份操作期间关闭应用，因此使用此属性时应格外小心。将此标志设为 true 会影响应用处于活动状态时的行为。
+
+默认值为 `false`，这表示当应用在前台运行时（如正在通过处于 `startForeground()` 状态的服务播放音乐的音乐应用），操作系统会避免对其进行备份。
+
+### android:icon
+
+整个应用的图标，以及每个应用组件的默认图标。
+
+### android:isGame
+
+应用是否为游戏。系统可以将分类为游戏的应用归入一组，或者将它们与其他应用分开显示。
+
+默认值为 `false`。
+
+### android:label
+
+整个应用的用户可读标签，以及每个应用组件的默认标签
+
+### android:logo
+
+整个应用的徽标，以及 Activity 的默认徽标。
+
+### android:supportsRtl
+
+声明您的应用是否愿意支持从右到左 (RTL) 布局。
+
+### android:taskAffinity
+
+一个粘性名称
+
+### android:theme
+
+对样式资源的引用，用于为应用中的所有 Activity 定义默认主题背景。各个 Activity 可以通过设置自己的 `theme` 属性来替换默认值。
+
+
+
 # activity
 
 # activity-alias
