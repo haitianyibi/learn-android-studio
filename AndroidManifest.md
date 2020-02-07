@@ -169,9 +169,77 @@ android:allowTaskReparenting/android:allowBackup/android:allowClearUserData/andr
 
 对样式资源的引用，用于为应用中的所有 Activity 定义默认主题背景。各个 Activity 可以通过设置自己的 `theme` 属性来替换默认值。
 
-
-
 # activity
+
+**语法：**
+
+```
+<activity android:allowEmbedded=["true" | "false"]
+          android:allowTaskReparenting=["true" | "false"]
+          android:alwaysRetainTaskState=["true" | "false"]
+          android:autoRemoveFromRecents=["true" | "false"]
+          android:banner="drawable resource"
+          android:clearTaskOnLaunch=["true" | "false"]
+          android:colorMode=[ "hdr" | "wideColorGamut"]
+          android:configChanges=["mcc", "mnc", "locale",
+                                 "touchscreen", "keyboard", "keyboardHidden",
+                                 "navigation", "screenLayout", "fontScale",
+                                 "uiMode", "orientation", "density",
+                                 "screenSize", "smallestScreenSize"]
+          android:directBootAware=["true" | "false"]
+          android:documentLaunchMode=["intoExisting" | "always" |
+                                  "none" | "never"]
+          android:enabled=["true" | "false"]
+          android:excludeFromRecents=["true" | "false"]
+          android:exported=["true" | "false"]
+          android:finishOnTaskLaunch=["true" | "false"]
+          android:hardwareAccelerated=["true" | "false"]
+          android:icon="drawable resource"
+          android:immersive=["true" | "false"]
+          android:label="string resource"
+          android:launchMode=["standard" | "singleTop" |
+                              "singleTask" | "singleInstance"]
+          android:lockTaskMode=["normal" | "never" |
+                              "if_whitelisted" | "always"]
+          android:maxRecents="integer"
+          android:maxAspectRatio="float"
+          android:multiprocess=["true" | "false"]
+          android:name="string"
+          android:noHistory=["true" | "false"]  
+          android:parentActivityName="string" 
+          android:persistableMode=["persistRootOnly" | 
+                                   "persistAcrossReboots" | "persistNever"]
+          android:permission="string"
+          android:process="string"
+          android:relinquishTaskIdentity=["true" | "false"]
+          android:resizeableActivity=["true" | "false"]
+          android:screenOrientation=["unspecified" | "behind" |
+                                     "landscape" | "portrait" |
+                                     "reverseLandscape" | "reversePortrait" |
+                                     "sensorLandscape" | "sensorPortrait" |
+                                     "userLandscape" | "userPortrait" |
+                                     "sensor" | "fullSensor" | "nosensor" |
+                                     "user" | "fullUser" | "locked"]
+          android:showForAllUsers=["true" | "false"]
+          android:stateNotNeeded=["true" | "false"]
+          android:supportsPictureInPicture=["true" | "false"]
+          android:taskAffinity="string"
+          android:theme="resource or theme"
+          android:uiOptions=["none" | "splitActionBarWhenNarrow"]
+          android:windowSoftInputMode=["stateUnspecified",
+                                       "stateUnchanged", "stateHidden",
+                                       "stateAlwaysHidden", "stateVisible",
+                                       "stateAlwaysVisible", "adjustUnspecified",
+                                       "adjustResize", "adjustPan"] >   
+    . . .
+</activity>
+```
+
+包含在application元素中，可包含layout/meta-data/intent-filter元素
+
+**属性：**
+
+
 
 # activity-alias
 
