@@ -9,14 +9,7 @@
 ```
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
               package="string"
-             android:allowBackup="true"
-       		 android:icon="@mipmap/ic_launcher"
-      	 	 android:label="@string/app_name"
-           	 android:roundIcon="@mipmap/ic_launcher_round"
-        	 android:supportsRtl="true"
-        	 android:theme="@style/AppTheme">
-              android:sharedUserId="string"
-              android:sharedUserLabel="string resource" 
+              android:targetSandboxVersion="1"
               android:versionCode="integer"
               android:versionName="string"
               android:installLocation=["auto" | "internalOnly" | "preferExternal"] >
@@ -32,34 +25,30 @@ androidmanifest.xml根元素，必须包含application元素，可包含compatib
 
 **属性：**
 
-xmlns:android/package/android:targetSandboxVersion/android:versionCode/android:versionName/android:installLocation/
+xmlns:android/package/android:targetSandboxVersion/android:versionCode/android:versionName/android:installLocation/  
 
----
-
-**xmlns:android**
+### xmlns:android
 
 定义android命名空间，属性值始终设置为“http://schemas.android.com/apk/res/android”
 
----
-
-**package**
+### package
 
 * 用作R.java的命名空间
 * 用作androidmanifest.xml文件中相关类的命名空间
 
-**android:targetSandboxVersion**
+### android:targetSandboxVersion
 
 沙盒版本号越高越安全，一般为1，可设为2，免安装应用必须设置为2
 
-**android:versionCode**
+### android:versionCode
 
 内部版本号，值必须是整数，数值越大版本越新，
 
-**android:versionName**
+### android:versionName
 
 向用户显示的版本号，值可以是字符串或字符串资源的引用。
 
-**android:installLocation**
+### android:installLocation
 
 应用默认安装位置，值为inernalOnly/auto/perferExternal
 
@@ -116,7 +105,23 @@ xmlns:android/package/android:targetSandboxVersion/android:versionCode/android:v
     </application>
 ```
 
-包含与manifest元素中，可包含activity/activity-alias/meta-data/service/receiver/provider/uses-library
+应用的声明，此元素包含用于声明每个应用组件的子元素，并且具有会影响所有组件的属性，其中许多属性（如 `icon`、`label`、`permission`、`process`、`taskAffinity` 和 `allowTaskReparenting`）会为组件元素的相应属性设置默认值。其他属性（如 `debuggable`、`enabled`、`description` 和 `allowClearUserData`）则为整个应用设置值，并且不能被组件替换。
+
+包含在manifest元素中，可包含activity/activity-alias/meta-data/service/receiver/provider/uses-library元素
+
+---
+
+**属性：**
+
+android:allowTaskReparenting/android:allowBackup/android:allowClearUserData/android:backupAgent/android:backupInForeground/android:banner/android:debuggable/android:description/android:directBootAware/android:enabled/android:extracNativeLibs/android:fullBackupContent/android:hasCode/android:harwareAccelerated/android:icon/android:isGame/android:killAfterRestore/android:largeHeap/android:label/android:logo/android:manageSpaceActivity/android:name/android:networkSecurityConfig/android:permission/android:persistent/android:process/android:restoreAnyVersion/android:requireAccountType/android:restrictedAccountType/android:supportsRtl/android:taskAffinity/android:testOnly/android:theme/android:uiOptions/android:usesCleartextTraffic/android:vmSafeMode/
+
+### android:allowTaskReparenting
+
+应用定义的 Activity 是否可以从启动它们的任务移至对其具有粘性的任务（当下次将该任务置于前台时）。如果它们可以移动，则设为 `"true"`；如果它们必须一直与启动它们的任务在一起，则设为 `"false"`。默认值为 `"false"`。
+
+### android:allowBackup
+
+是否允许应用参与备份和恢复基础架构。如果将此属性设为 false，则永远不会为该应用执行备份或恢复，即使是采用全系统备份方法也不例外（这种备份方法通常会通过 adb 保存所有应用数据）。此属性的默认值为 true。
 
 # activity
 
