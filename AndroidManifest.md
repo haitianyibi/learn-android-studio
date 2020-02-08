@@ -247,6 +247,14 @@ android:allowEmbedded/android:allowTaskReparenting/android:alwaysRetainTaskState
 
 实现 Activity 的类的名称    
 
+### android:parentActivityName
+
+```
+android:parentActivityName=".MainActivity"
+```
+
+设置父activity,提供向上导航按钮，
+
 # activity-alias
 
 # action
