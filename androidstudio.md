@@ -70,3 +70,9 @@ Android SDK Platform Tools是Android SDK的一个组件，包含于Android Platf
 
 #  四、Android Gradle
 
+# 五、预览版4.0 CANARY 9
+
+[4.0 CANARY 9下载](https://dl.google.com/dl/android/studio/ide-zips/4.0.0.9/android-studio-ide-193.6137316-windows.zip)
+
+解压
+
