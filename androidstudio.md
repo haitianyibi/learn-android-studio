@@ -68,7 +68,13 @@ Android SDK Platform
 
 Android SDK Platform Tools是Android SDK的一个组件，包含于Android Platform交互的工具。
 
+Android 模拟器
+
+
+
 #  四、Android Gradle
+
+Android Gradle插件版，Android Studio构建系统以Gradle为基础，Android插件通常会与Android Studio的更新步调保持一致，但插件（以及Gradle系统的其余部分）可独立于Android Studio运行并单独更新。
 
 # 五、预览版4.0 CANARY 9
 
