@@ -273,31 +273,166 @@ stable:稳定版，更新慢
 
 
 
+
+
+新建一个项目，项目名称，java语言，空白activity，
+
 项目目录结构C:\Users\Administrator\AndroidStudioProjects
 
 项目名称文件夹/
 
-.gradle:
+.gradle:所用的gradle版本6.1-rc-1:
 
-.idea:
+.idea:模块，代码样式
 
 app:
 
 gradle:
 
-.gitignore:
+.gitignore: 忽略的文件，提供给某些工具扫描过滤
 
-build.gradle:
+build.gradle: 依赖库下载地址等
 
-gradle.properties:
+gradle.properties: 下载并使用的gradle版本
 
 gradlew:
 
 gradlew.bat:
 
-local.properties:
+local.properties:配置SDK地址
 
-settings.gradle:
+settings.gradle:项目名称，
 
 
+
+
+
+gradle工具的文件
+
+C:\Users\Administrator\\.gradle
+
+caches:
+
+dameon:
+
+native:平台相关的动态链接库
+
+wrapper:完整的gradle文件
+
+
+
+
+
+# 六、一些坑
+
+```
+A problem occurred configuring root project 'HelloWorld'.
+> Could not resolve all artifacts for configuration ':classpath'.
+   > Could not resolve com.sun.activation:javax.activation:1.2.0.
+     Required by:
+         project : > com.android.tools.build:gradle:4.0.0-alpha09 > com.android.tools.build:builder:4.0.0-alpha09 > com.android.tools:sdklib:27.0.0-alpha09 > com.android.tools:repository:27.0.0-alpha09
+      > Could not resolve com.sun.activation:javax.activation:1.2.0.
+         > Could not get resource 'https://jcenter.bintray.com/com/sun/activation/javax.activation/1.2.0/javax.activation-1.2.0.pom'.
+            > Could not GET 'https://jcenter.bintray.com/com/sun/activation/javax.activation/1.2.0/javax.activation-1.2.0.pom'.
+```
+
+解析获得特定的pom文件，与依赖仓库有关
+
+```
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.0.0-alpha09"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+```
+
+这里只用了   google()  ，jcenter()，这两个代码库，可能有些文件获取不了，可以尝试使用国内的代码库
+
+```
+ maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+```
+
+build.gradle文件中配置，在仅对当前项目有效，
+
+
+
+在settings设置里找到Build,Execution,Deployment下的remote jar repositories  即远程仓库
+
+在Maven jar repositories加入仓库地址，可以自动找到相对应的依赖项，
+
+
+
+https://maven.aliyun.com/mvn/view
+
+| Repository       | Type   | Policy   | Path                                                 |
+| ---------------- | ------ | -------- | ---------------------------------------------------- |
+| apache snapshots | proxy  | SNAPSHOT | https://maven.aliyun.com/repository/apache-snapshots |
+| central          | proxy  | RELEASE  | https://maven.aliyun.com/repository/central          |
+| google           | proxy  | RELEASE  | https://maven.aliyun.com/repository/google           |
+| gradle-plugin    | proxy  | RELEASE  | https://maven.aliyun.com/repository/gradle-plugin    |
+| jcenter          | proxy  | RELEASE  | https://maven.aliyun.com/repository/jcenter          |
+| spring           | proxy  | RELEASE  | https://maven.aliyun.com/repository/spring           |
+| spring-plugin    | proxy  | RELEASE  | https://maven.aliyun.com/repository/spring-plugin    |
+| public           | group  | RELEASE  | https://maven.aliyun.com/repository/public           |
+| releases         | hosted | RELEASE  | https://maven.aliyun.com/repository/releases         |
+| snapshots        | hosted | SNAPSHOT | https://maven.aliyun.com/repository/snapshots        |
+| grails-core      | proxy  | RELEASE  | https://maven.aliyun.com/repository/grails-core      |
+| mapr-public      | proxy  | RELEASE  | https://maven.aliyun.com/repository/mapr-public      |
+
+
+
+
+
+Gradle分两个，一个是本地构建用的构建工具，另一个是Android Studio中的插件，用来调用本地的工具
+
+gradle插件版本，项目的build.gradle中gradle:后面为版本号
+
+```
+classpath "com.android.tools.build:gradle:4.0.0-alpha09"
+```
+
+C:\Users\Administrator\\.gradle\caches\modules-2\files-2.1\com.android.tools.build\gradle\4.0.0-alpha09
+
+本地gradle工具版本
+
+```
+distributionUrl=https\://services.gradle.org/distributions/gradle-6.1-rc-1-all.zip
+```
+
+C:\Users\Administrator\\.gradle\wrapper\dists\gradle-6.1-rc-1-all
+
+官方建议的gradle插件版本和gradle版本
+
+| 插件版本    | 所需的Gradle版本 |
+| :---------- | :--------------- |
+| 1.0.0-1.1.3 | 2.2.1-2.3        |
+| 1.2.0-1.3.1 | 2.2.1-2.9        |
+| 1.5.0       | 2.2.1-2.13       |
+| 2.0.0-2.1.2 | 2.10-2.13        |
+| 2.1.3-2.2.3 | 2.14.1+          |
+| 2.3.0+      | 3.3+             |
+| 3.0.0+      | 4.1+             |
+| 3.1.0+      | 4.4+             |
+| 3.2.0-3.2.1 | 4.6+             |
+| 3.3.0-3.3.2 | 4.10.1+          |
+| 3.4.0-3.4.1 | 5.1.1+           |
+| 3.5.0+      | 5.4.1-5.6.4      |
+
+
+
+想要在终端使用gradle需要配置环境变量
 
